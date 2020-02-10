@@ -7,7 +7,7 @@ body {
   justify-content: center;
   align-items: center;
   color: hsl(198, 1%, 29%);
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Sriracha', cursive;
   text-align: center;
   font-size: 130%;
 }
@@ -35,8 +35,8 @@ body {
 .heading h1 {
   transform: rotate(2deg);
   padding: 0.2rem 1.2rem;
-  /* border-radius: 30% 15% 30% 15%/15% 30% 35% 30%; */
-  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  border-radius: 80% 10% 50% 15%/15% 30% 55% 30%;
+  /* border-radius: 20% 5% 20% 5%/5% 20% 25% 20%; */
   background-color: #c8ace4;
   font-size: 1.5rem;
 }

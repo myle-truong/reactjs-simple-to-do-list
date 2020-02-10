@@ -1,41 +1,40 @@
 import React, { useState } from 'react';
+import ToDoItem from './ToDoItem';
+import InPutArea from './InPutArea';
 
 function App() {
-  const [inputText, setInputText] = useState('');
   const [items, setItems] = useState([]);
-
-  //setup and save data after add on.
-  function handleChange(event) {
-    const newValue = event.target.value;
-    setInputText(newValue);
-  }
-  //Update list things must done to the list
-  function addItem() {
+  //
+  function addItem(inputText) {
     setItems(prevItems => {
       return [...prevItems, inputText];
     });
-    setInputText('');
   }
+  //setup for delete items which done
+  // function deleteItem(id) {
+  //   setItems(prevItems => {
+  //     return prevItems.filter((item, index) => {
+  //       return index !== id;
+  //     });
+  //   });
+  // }
 
   return (
     <div className="container">
       <div className="heading">
-        <h1>Things Must Done</h1>
+        <h1>Things must done</h1>
       </div>
-      <div className="form">
-        <input onChange={handleChange} type="text" value={inputText} />
-        <button onClick={addItem}>
-          <span>Add</span>
-        </button>
-      </div>
+      <InPutArea onAdd={addItem} />
       <div>
         <ul>
-          {items.map(todoItem => {
-            return <li>{todoItem}</li>;
-          })}
-          {/* {items.map(todoItem => (
-            <li>{todoItem}</li>
-          ))} */}
+          {items.map((todoItem, index) => (
+            <ToDoItem
+              key={index}
+              id={index}
+              text={todoItem}
+              // onChecked={deleteItem}
+            />
+          ))}
         </ul>
       </div>
     </div>
