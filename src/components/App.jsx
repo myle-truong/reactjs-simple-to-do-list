@@ -4,6 +4,7 @@ import InPutArea from './InPutArea';
 
 function App() {
   const [items, setItems] = useState([]);
+
   //
   function addItem(inputText) {
     setItems(prevItems => {
